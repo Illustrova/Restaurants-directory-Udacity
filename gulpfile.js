@@ -19,7 +19,7 @@ const config = {
 		root: "./src",
 		html: "./src/*.html",
 		css: "./src/css/*.css",
-		sass: "./src/sass/**/main.scss",
+		sass: "./src/sass/main.scss",
 		pug: "./src/pug/**/index.pug",
 		js: "./src/js/**/*.js",
 		img: "./src/img/**/*",
@@ -31,6 +31,12 @@ const config = {
 		js: "./build/js",
 		img: "./build/img",
 		data: "./build/data"
+	},
+	watch: {
+		sass: "./src/sass/**/*.scss",
+		html: "./src/*.html",
+		js: "./src/js/**/*.js",
+		data:  "./src/data/*.json"
 	}
 };
 
@@ -145,10 +151,10 @@ function serve(done) {
 
 // Watch files compiling
 gulp.task("watch", function() {
-	gulp.watch(config.src.sass, gulp.series("sass", reload));
-	gulp.watch(config.src.root, gulp.series("html", reload));
-	gulp.watch(config.src.js, gulp.series("js", reload));
-	gulp.watch(config.src.data, gulp.series("data", reload));
+	gulp.watch(config.watch.sass, gulp.series("sass", reload));
+	gulp.watch(config.watch.html, gulp.series("html", reload));
+	gulp.watch(config.watch.js, gulp.series("js", reload));
+	gulp.watch(config.watch.data, gulp.series("data", reload));
 });
 
 gulp.task("default", gulp.series("html", "sass", "js", "data", serve, "watch"));
