@@ -3,19 +3,33 @@
 
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #333;
+	font-size: 16px;
+	color: $dark-grey;
 	line-height: 1.5;
 }
+
+//Layout
 body {
 	background-color: #fdfdfd;
 	margin: 0;
 	position:relative;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 }
+
+main {
+	flex: 1 0 auto;
+}
+
+footer {
+	flex-shrink: 0;
+}
+
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #333;
+	font-size: 1em;
+	color: $dark-grey;
 }
 a {
 	color: orange;
@@ -30,14 +44,16 @@ a img{
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0 0 20px;
+  margin: 0 0 1em;
 }
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+  // padding: 0 1em;
 }
 #footer {
   background-color: #444;
