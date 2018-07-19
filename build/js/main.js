@@ -32,9 +32,13 @@ fetchNeighborhoods = () => {
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
+  let pos = 0;
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
+    //Implement ARIA set/position
+    option.setAttribute("aria-posinset", ++pos);
+    option.setAttribute("aria-setsize", neighborhoods.length);
     option.value = neighborhood;
     select.append(option);
   });
@@ -59,9 +63,14 @@ fetchCuisines = () => {
  */
 fillCuisinesHTML = (cuisines = self.cuisines) => {
   const select = document.getElementById('cuisines-select');
-
+  let pos = 0; //ARIA posinset
   cuisines.forEach(cuisine => {
+
     const option = document.createElement('option');
+    //Implement ARIA set/position
+    option.setAttribute("aria-posinset", ++pos);
+    option.setAttribute("aria-setsize", cuisines.length);
+
     option.innerHTML = cuisine;
     option.value = cuisine;
     select.append(option);
@@ -160,6 +169,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = restaurant.name + ' restaurant photo';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
