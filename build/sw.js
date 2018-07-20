@@ -25,8 +25,8 @@ const urls = [
 ];
 
 //Start caching
-self.addEventListener("install", function(event) {
-  event.waitUntil(
+self.addEventListener("install", function(evt) {
+  evt.waitUntil(
     caches
       .open(staticCache)
       .then(function(cache) {
@@ -39,33 +39,33 @@ self.addEventListener("install", function(event) {
 });
 
 // Get data from cache
-self.addEventListener("fetch", function(event) {
-  event.respondWith(
+self.addEventListener("fetch", function(evt) {
+  evt.respondWith(
     caches
-      .match(event.request)
+      .match(evt.request)
       .then(function(response) {
         if (response) {
           return response;
         }
-        return fetch(event.request);
+        return fetch(evt.request);
       })
-      .catch(function(error) {
-        console.log(error);
+      .catch(function(err) {
+        console.log(err);
       })
   );
 });
 
 // Remove old versions of cache
-self.addEventListener("activate", function(event) {
+self.addEventListener("activate", function(evt) {
   console.log(caches.keys());
-  event.waitUntil(
+  evt.waitUntil(
     caches.keys().then(function(cacheNames) {
       console.log('cacheNames => ',cacheNames);
       return Promise.all(
         cacheNames
           .filter(function(cacheName) {
             console.log('cacheName => ',cacheName);
-            return cacheName.startsWith("restaurants_") && cacheName != staticCache
+            return cacheName != staticCache;
           })
           .map(function(cacheName) {
             return caches.delete(cacheName);

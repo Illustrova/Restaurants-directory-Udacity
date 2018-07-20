@@ -141,6 +141,7 @@ resetRestaurants = (restaurants) => {
   self.restaurants = [];
   const ul = document.getElementById('restaurants-list');
   ul.innerHTML = '';
+  ul.setAttribute("class", "restaurants-list");
 
   // Remove all map markers
   if (self.markers) {
@@ -186,6 +187,7 @@ createRestaurantHTML = (restaurant) => {
   li.append(address);
 
   const more = document.createElement('a');
+  more.setAttribute("role", "button");
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)

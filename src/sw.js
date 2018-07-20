@@ -25,8 +25,8 @@ const urls = [
 ];
 
 //Start caching
-self.addEventListener("install", function(event) {
-  event.waitUntil(
+self.addEventListener("install", function(evt) {
+  evt.waitUntil(
     caches
       .open(staticCache)
       .then(function(cache) {
@@ -40,7 +40,7 @@ self.addEventListener("install", function(event) {
 
 // Get data from cache
 self.addEventListener("fetch", function(evt) {
-  event.respondWith(
+  evt.respondWith(
     caches
       .match(evt.request)
       .then(function(response) {
@@ -56,9 +56,9 @@ self.addEventListener("fetch", function(evt) {
 });
 
 // Remove old versions of cache
-self.addEventListener("activate", function(event) {
+self.addEventListener("activate", function(evt) {
   console.log(caches.keys());
-  event.waitUntil(
+  evt.waitUntil(
     caches.keys().then(function(cacheNames) {
       console.log('cacheNames => ',cacheNames);
       return Promise.all(
