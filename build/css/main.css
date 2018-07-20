@@ -425,7 +425,7 @@ label {
 }
 
 @media screen and (min-width: 768px) {
-	footer {
+	.section-left {
 		width: 50%;
 	}
 }
@@ -473,7 +473,6 @@ label {
 	.restaurant-container, .reviews-container {
 		border-bottom: 1px solid #d9d9d9;
 		border-top: 1px solid #fff;
-		width: 50%;
 	}
 }
 
