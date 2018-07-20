@@ -1,12 +1,12 @@
 //Breakpoints
-
 $m: 520px;
 $l: 768px;
 $xl: 1200px;
 
-$sticky-height: 80px;
-//border-radius of elements
-$rad:  30px;
+//Sizes
+$sticky-height: 80px;  //sticky header size
+$rad:  30px; //border-radius of elements
+$container-padding: 1em;
 
 //colors
 $primary: #ad5c00;
@@ -14,4 +14,3 @@ $secondary: #a36a00;
 $dark: #252831;
 $dark-grey: #333;
 $light-grey: #c9c9c9;
-$container-padding: 1em;

@@ -1,6 +1,15 @@
 @charset "utf-8";
 /* CSS Document */
 
+/*Focus styles*/
+:focus {
+	outline-color: $primary;
+	outline-style: dotted;
+	outline-width: thin;
+
+}
+
+/*Typography*/
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
@@ -8,7 +17,23 @@ body,td,th,p{
 	line-height: 1.5;
 }
 
-//Layout
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0 0 1em;
+}
+
+ul, li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: $dark-grey;
+}
+
+a {
+	color: orange;
+	text-decoration: none;
+}
+
+/*Main styles*/
 body {
 	background-color: #fdfdfd;
 	margin: 0;
@@ -26,36 +51,11 @@ footer {
 	flex-shrink: 0;
 }
 
-ul, li {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1em;
-	color: $dark-grey;
-}
-a {
-	color: orange;
-	text-decoration: none;
-}
-a:hover, a:focus {
-	color: #3397db;
-	text-decoration: none;
-}
-a img{
-	border: none 0px #fff;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-family: Arial, Helvetica, sans-serif;
-	margin: 0 0 1em;
-}
-article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
-#maincontent {
+.maincontent {
 	background-color: #f3f3f3;
 	min-height: 100%;
-	// padding: 0 1em;
 }
-#footer {
+footer {
 	background-color: #444;
 	color: #aaa;
 	font-size: 8pt;
@@ -65,13 +65,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	text-transform: uppercase;
 }
 
-//Accessibility features
-
+/*Accessibility features*/
 //Move form labels offscreen
 label {
-position: absolute;
-left: -500px;
-color: white;
+	position: absolute;
+	left: -500px;
+	color: white;
 }
 
 //Skip link
@@ -79,8 +78,8 @@ color: white;
 	position: absolute;
 	top: -40px;
 	left: 0;
-	background: orange;
-	color: white;
+	background: $primary;
+	color: #fff;
 	font-weight: 100;
 	padding: 5px 10px;
 	z-index: 100;
@@ -88,20 +87,5 @@ color: white;
 
 .skip-link:focus, .skip-link:hover {
 	top: 0;
-	color: white;
-}
-
-a {
-  color: #f99b2c;
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: orange;
-  text-decoration: none;
-}
-
-a img{
-  border: none;
+	color: #fff;
 }

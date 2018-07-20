@@ -19,7 +19,7 @@
   <header class="fixed-mobile">
     <a href="#restaurant-container" class="skip-link">Skip to Maincontent →</a>
     <!-- Beginning nav -->
-    <nav>
+    <nav class="top-nav">
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- End nav -->
@@ -27,29 +27,30 @@
   <!-- End header -->
 
   <!-- Beginning main -->
-  <main id="maincontent" role="main">
+  <main id="maincontent" class="maincontent" role="main">
     <!-- Beginning map -->
     <section id="map-container" class="section-right">
-      <div id="map" aria-label="Restaurants on map" role="application" tabindex="-1"></div>
+      <div id="map" class="map" aria-label="Restaurants on map" role="application" tabindex="-1"></div>
     </section>
     <!-- End map -->
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" aria-label="breadcrumb" class="section-left">
+    <ul id="breadcrumb" aria-label="breadcrumb" class="breadcrumb section-left">
       <li><a href="/">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
     <!-- Beginning restaurant -->
-    <section id="restaurant-container" class="section-left" tabindex="-1" role="contentinfo">
-      <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours" summary="Opening hours"></table>
+    <section id="restaurant-container" class="restaurant-container section-left" tabindex="-1" role="contentinfo">
+      <h1 id="restaurant-name" class="restaurant-name"></h1>
+      <img id="restaurant-img" class="restaurant-img">
+      <p id="restaurant-cuisine" class="restaurant-cuisine"></p>
+      <p id="restaurant-address" class="restaurant-address"></p>
+      <table id="restaurant-hours" class="restaurant-hours" summary="Opening hours">
+      </table>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
-    <section id="reviews-container" class="section-left">
-      <div id="reviews-list"></ul>
+    <section id="reviews-container" class="reviews-container section-left">
+      <div id="reviews-list" class="reviews-list"></ul>
     </section>
     <!-- End reviews -->
   </main>
